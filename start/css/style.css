@@ -1,8 +1,9 @@
+/* font-family: 'Lateef', cursive; */
 .scientific  p , .lettre  p  {
     color : #00e676 ;
     text-align: center ;
     font-weight: bold ;
-    font-size: 300% ; 
+    font-size: 400% ;
 }
 .scientific , .lettre {
     width: 50% ;
@@ -26,14 +27,12 @@
     clear : right ;
     width : 100% ; 
     margin-bottom : 2% ;
-    font-weight: bolder ;
-    font-size: 200% ;  
+    font-size: 200% ; 
 }
 .scientific a {
     float : left;
     width : 49% ; 
     margin-bottom : 2% ;
-    font-weight: bolder ;
     font-size: 200% ;  
 }
 .scientific .number2  , .scientific .number4 {
@@ -77,9 +76,12 @@
 .benifits i {
     text-align : center ;
 }
-.benifits .material-icons { color: #00e676; }
-.benifits .material-icons { font-size: 48px; }
+.benifits .material-icons { color: #00e676;
+ }
+.benifits .material-icons { font-size: 48px;
+ }
 
+/*apps section styling */
 .apps {
 	background-color :  #00e676
 }
@@ -88,6 +90,15 @@
 	font-size : 130% ;
 	font-weight : bold ;
 }
-.apps h4 {
-	color : white
+.apps h5 {
+	color : white ;
+	font-weight : bold ;
 }
+.mobileApp {
+	border-right : 5px black solid
+}
+.pcApp {
+	border-left : 5px black solid
+}
+
+/* footer design */
