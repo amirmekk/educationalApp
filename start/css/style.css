@@ -102,3 +102,16 @@
 }
 
 /* footer design */
+footer .about {
+	font-size : 120% ;
+	text-align : center ;
+	color : white
+}
+.about a {
+	color : white ;
+}
+
+
+
+
+
