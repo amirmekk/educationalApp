@@ -46,15 +46,31 @@ gulp.task("html" , function(){
                .pipe(gulp.dest("finish/"))
                .pipe(connect.reload())
 });
+gulp.task("lettreHtml" , function(){
+    return gulp.src("start/lettre/*.html")
+               .pipe(plumber())
+               .pipe(htmlmin())
+               .pipe(gulp.dest("finish/lettre"))
+               .pipe(connect.reload())
+});
+gulp.task("scienceHtml" , function(){
+    return gulp.src("start/science/*.html")
+               .pipe(plumber())
+               .pipe(htmlmin())
+               .pipe(gulp.dest("finish/science"))
+               .pipe(connect.reload())
+});
+
 gulp.task("watch" , function(){
     gulp.watch('start/css/*.css' , ['css']);
     gulp.watch('start/js/*.js' , ['concatJS','js']);
     gulp.watch('start/css/*.css' , ['css']);
-    gulp.watch('start/*.html' , ['html'])
+    gulp.watch('start/science/*.html' , ['scienceHtml']);
+	gulp.watch('start/lettre/*.html' , ['lettreHtml'])
 });
 gulp.task('connect' , function(){
     connect.server({
         root: 'finish',
         livereload: true});
 });
-gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' , 'watch' , 'connect']);
+gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' , 'scienceHtml' , 'lettreHtml' ,'watch' , 'connect']);
