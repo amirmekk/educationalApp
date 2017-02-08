@@ -6,6 +6,7 @@ var gulp = require("gulp") ,
     plumber = require("gulp-plumber") ,
     connect = require("gulp-connect"),
     imagemin = require("imagemin") ,
+	surge = require('gulp-surge'),
     concat = require("gulp-concat");
 gulp.task('concatJS' , function(){
     return gulp.src(['start/js/jquery.js' , 'start/js/wow.js' , 'start/js/owl.js'])
@@ -60,11 +61,15 @@ gulp.task("scienceHtml" , function(){
                .pipe(gulp.dest("finish/science"))
                .pipe(connect.reload())
 });
-
+gulp.task('deploy', [], function () {
+  return surge({
+    project: './finish',         // Path to your static build directory
+    domain: 'bent-manager.surge.sh'  // Your domain or Surge subdomain
+  })
+})
 gulp.task("watch" , function(){
     gulp.watch('start/css/*.css' , ['css']);
     gulp.watch('start/js/*.js' , ['concatJS','js']);
-    gulp.watch('start/css/*.css' , ['css']);
     gulp.watch('start/science/*.html' , ['scienceHtml']);
 	gulp.watch('start/lettre/*.html' , ['lettreHtml'])
 });
@@ -73,4 +78,4 @@ gulp.task('connect' , function(){
         root: 'finish',
         livereload: true});
 });
-gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' , 'scienceHtml' , 'lettreHtml' ,'watch' , 'connect']);
+gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' , 'scienceHtml' , 'lettreHtml' ,'watch' , 'deploy' , 'connect']);

@@ -111,8 +111,12 @@ footer .about {
 	color : #00e676 ;
 	font-weight : bold ;
 }
-
-
+footer {
+	background-color : black ;
+}
+footer .row {
+	padding-top : .5% ;
+}
 
 
 

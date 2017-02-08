@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "surge": "^0.18.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -12,6 +14,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-surge": "^0.1.0",
     "gulp-uglify": "^2.0.0",
     "imagemin": "^5.2.2"
   }
