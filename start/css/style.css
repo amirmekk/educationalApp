@@ -122,6 +122,32 @@ footer .row {
 	text-align : right ;
 	margin-right : 1% ;
 }
+/* classes styling */
+.classesHeaders {
+	color : white ;
+	font-size : 150% ;
+	font-weight : bolder ;
+	text-align : center ; 
+}
+.card-title {
+	color : black ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
