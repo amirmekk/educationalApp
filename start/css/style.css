@@ -132,7 +132,12 @@ footer .row {
 .card-title {
 	color : black ;
 }
-
+.mainClasses {
+	background-color : #D3D3D3 ; 
+}
+.secondaryClasses {
+	background-color : #D3D3D3 ;
+}
 
 
 
