@@ -1,13 +1,13 @@
-var gulp = require("gulp") ,
-    uglify = require("gulp-uglify") , 
-    cleancss = require("gulp-clean-css") ,
+var gulp      = require("gulp") ,
+    uglify    = require("gulp-uglify") , 
+    cleancss  = require("gulp-clean-css") ,
     prefixcss = require("gulp-autoprefixer") ,
-    htmlmin = require("gulp-htmlmin") ,
-    plumber = require("gulp-plumber") ,
-    connect = require("gulp-connect"),
-    imagemin = require("imagemin") ,
-	surge = require('gulp-surge'),
-    concat = require("gulp-concat");
+    htmlmin   = require("gulp-htmlmin") ,
+    plumber   = require("gulp-plumber") ,
+    connect   = require("gulp-connect"),
+    imagemin  = require("imagemin") ,
+	surge     = require('gulp-surge'),
+    concat    = require("gulp-concat");
 gulp.task('concatJS' , function(){
     return gulp.src(['start/js/jquery.js' , 'start/js/wow.js' , 'start/js/owl.js'])
         .pipe(concat('all.js'))
@@ -41,41 +41,30 @@ gulp.task("images" , function(){
                .pipe(connect.reload())
 }); 
 gulp.task("html" , function(){
-    return gulp.src("start/*.html")
+    return gulp.src("start/*/*/*.html")
                .pipe(plumber())
                .pipe(htmlmin())
                .pipe(gulp.dest("finish/"))
                .pipe(connect.reload())
 });
-gulp.task("lettreHtml" , function(){
-    return gulp.src("start/lettre/*.html")
-               .pipe(plumber())
-               .pipe(htmlmin())
-               .pipe(gulp.dest("finish/lettre"))
-               .pipe(connect.reload())
-});
-gulp.task("scienceHtml" , function(){
-    return gulp.src("start/science/*.html")
-               .pipe(plumber())
-               .pipe(htmlmin())
-               .pipe(gulp.dest("finish/science"))
-               .pipe(connect.reload())
-});
+
 gulp.task('deploy', [], function () {
   return surge({
     project: './finish',         // Path to your static build directory
     domain: 'bent-manager.surge.sh'  // Your domain or Surge subdomain
   })
 })
+
 gulp.task("watch" , function(){
     gulp.watch('start/css/*.css' , ['css']);
     gulp.watch('start/js/*.js' , ['concatJS','js']);
-    gulp.watch('start/science/*.html' , ['scienceHtml']);
-	gulp.watch('start/lettre/*.html' , ['lettreHtml'])
+    gulp.watch('start/*/*/*.html' , ['html']);
 });
+
 gulp.task('connect' , function(){
     connect.server({
         root: 'finish',
         livereload: true});
 });
-gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' , 'scienceHtml' , 'lettreHtml' ,'watch' , 'deploy' , 'connect']);
+
+gulp.task('default' , ['concatCSS','css' ,'concatJS', 'js' , 'html' ,'watch' , 'connect']);
