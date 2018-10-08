@@ -1,0 +1,168 @@
+* {
+  font-family: 'Tajawal', sans-serif;
+
+}
+.scientific  p , .lettre  p  {
+    color : #00e676 ;
+    text-align: center ;
+    font-weight: bold ;
+    font-size: 400% ;
+}
+.scientific , .lettre {
+    width: 50% ;
+    padding-bottom: 5% ;
+}
+.scientific {
+    float : left ;
+    background-image: url('../sci.jpg') ;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.lettre {
+    float : right ;
+    background-image: url('../lettre.jpeg') ;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.lettre a  {
+    clear : right ;
+    width : 100% ;
+    margin-bottom : 2% ;
+    font-size: 200% ;
+}
+.scientific a {
+    float : left;
+    width : 49% ;
+    margin-bottom : 2% ;
+    font-size: 200% ;
+}
+.scientific .number2  , .scientific .number4 {
+    margin-left : 1%
+}
+@media (max-width: 700px){
+    .scientific {
+        clear : both ;
+        width: 100% ;
+    }
+    .lettre {
+        clear : both ;
+        width: 100% ;
+    }
+    .scientific a {
+        width: 100% ;
+        margin-bottom : 2% ;
+    }
+}
+.benifits{
+    background-color: black ;
+}
+.benifits p{
+    color : white ;
+    font-size: 120% ;
+}
+.benifits i{
+    font-size: 120% ;
+}
+.benifits .header{
+    color : white ;
+    font-size: 170% ;
+    font-weight: bolder ;
+}
+.benifits .firstP{
+    color : white ;
+    text-align: center ;
+    font-size: 200% ;
+    font-weight: bold ;
+}
+.benifits i {
+    text-align : center ;
+}
+.benifits .material-icons { color: #00e676;
+ }
+.benifits .material-icons { font-size: 48px;
+ }
+
+/*apps section styling */
+.apps {
+	background-color :  #00e676
+}
+.apps p{
+	color : black ;
+	font-size : 130% ;
+	font-weight : bold ;
+}
+.apps h5 {
+	color : white ;
+	font-weight : bold ;
+}
+.mobileApp {
+	border-right : 5px black solid
+}
+.pcApp {
+	border-left : 5px black solid
+}
+
+/* footer design */
+footer .about {
+	font-size : 120% ;
+	text-align : center ;
+	color : white
+}
+.about a {
+	color : #00e676 ;
+	font-weight : bold ;
+}
+footer {
+	background-color : black ;
+}
+footer .row {
+	padding-top : .5% ;
+}
+/*path div styling  */
+.path {
+	text-align : right ;
+	margin-right : 1% ;
+}
+/* classes styling */
+.classesHeaders {
+	color : white ;
+	font-size : 150% ;
+	font-weight : bolder ;
+	text-align : center ;
+}
+.card-title {
+	color : black ;
+}
+.mainClasses {
+	background-color : #D3D3D3 ;
+}
+.secondaryClasses {
+	background-color : #D3D3D3 ;
+}
+
+.card {
+    margin-bottom: 2% ;
+
+}
+
+a > img {
+    margin-top: 20%
+}
+
+.hisGeo {
+    font-size : 10%;
+}
+.slick-prev {
+  color : red ;
+  background-color: #00e676 ;
+}
+.slick-next {
+  color : red ;
+  background-color: #00e676 ;
+}
+.grad {
+  font-size: 150%;
+  font-weight: bolder;
+}
